@@ -18,12 +18,10 @@ const projects = [
     live: "",
     cover: "img/taskhub-1.jpg",
     screens: [
+      "img/taskhub-1.jpg",
       "img/taskhub-2.jpg",
       "img/taskhub-3.jpg",
-      "img/taskhub-4.jpg",
-      "img/taskhub-5.jpg",
-      "img/taskhub-6.jpg",
-      "img/taskhub-7.jpg"
+      "img/taskhub-4.jpg"
     ],
     bullets: [
       "Designed REST endpoints (CRUD) and documented them with Swagger.",
