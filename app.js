@@ -31,6 +31,39 @@ const projects = [
     ]
   },
   {
+    name: "University Database App",
+    desc: "University project: mobile application built with Flutter and SQLite. Designed database schema and UML diagrams (use case, class, sequence) and implemented full CRUD functionality.",
+    warning: "Screenshots contain Ukrainian text. Automatic translation may be inaccurate.",
+    tags: ["Flutter", "SQLite", "Database design", "UML", "CRUD"],
+    github: "https://github.com/krikatletka/University",  
+    live: "",
+    cover: "img/university-1.png",
+    screens: [
+      "img/university-1.png",
+      "img/university-3.png",
+      "img/university-7.png",
+      "img/university-6.jpg",
+      "img/university-10.jpg",
+      "img/university-11.jpg",
+      "img/university-3.jpg",
+      "img/university-4.png",
+      "img/university-5.png",
+      "img/university-8.png",
+      "img/university-9.jpg",
+      "img/university-12.jpg",
+      "img/university-13.jpg",
+      "img/university-14.png",
+      "img/university-15.png",
+      "img/university-16.png"
+    ],
+    bullets: [
+      "Coordinated the work process and project structure.",
+      "Designed the SQLite database schema and created relational tables.",
+      "Created UML diagrams: use case, class and sequence diagrams.",
+      "Integrated SQLite with the application logic (CRUD operations).",
+    ]
+  },
+  {
     name: "Portfolio Website",
     desc: "Personal portfolio hosted on GitHub Pages: projects, skills, screenshots and contact information.",
     tags: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
@@ -44,6 +77,8 @@ const projects = [
       "Published the website using GitHub Pages."
     ]
   }
+
+
 ];
 
 // Skills blocks
@@ -222,6 +257,18 @@ function openModal(index) {
 
   modalTitle.textContent = currentProject.name;
   modalDesc.textContent = currentProject.desc;
+
+  const existingWarning = document.getElementById("modalWarning");
+    if (existingWarning) existingWarning.remove();
+
+    if (currentProject.warning) {
+      const warn = document.createElement("div");
+      warn.id = "modalWarning";
+      warn.className = "modal-warning";
+      warn.textContent = "⚠ " + currentProject.warning;
+      modalDesc.after(warn);
+    }
+
 
   modalTags.innerHTML = currentProject.tags
     .map(t => `<span class="tag">${escapeHtml(t)}</span>`)
